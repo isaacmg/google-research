@@ -89,6 +89,8 @@ def apply_mlp(inputs,
   Returns:
     Tensor for MLP outputs.
   """
+  print("MLP input shape")
+  print(tf.shape(inputs))
   if use_time_distributed:
     hidden = tf.keras.layers.TimeDistributed(
         tf.keras.layers.Dense(hidden_size, activation=hidden_activation))(
