@@ -151,6 +151,7 @@ def main(expt_name,
     val_loss = model.evaluate(valid)
 
     print("Computing test loss")
+    print(tf.shape(test))
     output_map = model.predict(test, return_targets=True)
     targets = data_formatter.format_predictions(output_map["targets"])
     p50_forecast = data_formatter.format_predictions(output_map["p50"])
